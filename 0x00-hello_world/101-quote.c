@@ -9,7 +9,7 @@
 int main(void)
 {
 	/** Print the message */
-	const char *message = "and that piece of art is useful\n";
+	const char *message = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
 
 	write(1, message, 32);
 
