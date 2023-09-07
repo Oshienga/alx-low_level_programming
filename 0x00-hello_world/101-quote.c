@@ -11,8 +11,10 @@ int main(void)
 {
 	/** Print the message */
 	char *message = "and that piece of art is useful\" - Dora Korpar, 2015-10-19";
+	char newline = '\n';
 
 	write(1, message, 59);
+	write(1, &newline, 1);
 
 	/** Return 1 to indicate success */
 	return (1);
