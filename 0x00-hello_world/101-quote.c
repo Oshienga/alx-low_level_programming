@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <unistd.h>
 
 /**
@@ -9,9 +10,9 @@
 int main(void)
 {
 	/** Print the message */
-	const char *message = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
+	char *message = "and that piece of art is useful\" - Dora Korpar, 2015-10-19";
 
-	write(1, message, 32);
+	write(1, message, 59);
 
 	/** Return 1 to indicate success */
 	return (1);
