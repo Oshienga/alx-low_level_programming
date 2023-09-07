@@ -1,6 +1,11 @@
 #include <stdio.h>
 
-/** This is a simple C program that prints a message. */
+/**
+ * main - Entry point
+ * Description: 'This program prints a message to the standard output.'
+ * Return: Always 0 (Success)
+*/
+
 int main(void)
 {
 	/** Print the message */
