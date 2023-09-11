@@ -24,13 +24,13 @@ int main(void)
 				{
 					putchar(digit1 + '0');
 					putchar(digit4 + '0');
-				}
-			}
 
-			if (digit2 < 8)
-			{
-				putchar(',');
-				putchar(' ');
+					if (digit2 < 8)
+					{
+						putchar(',');
+						putchar(' ');
+					}
+				}
 			}
 		}
 	}
