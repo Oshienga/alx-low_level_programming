@@ -8,7 +8,7 @@
 
 int main(void)
 {
-	int digit1, digit2, digit3, digit4;
+	int num1, num2;
 
 	for (int num1 = 0; num1 <= 99; num1++)
 	{
