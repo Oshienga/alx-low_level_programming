@@ -10,27 +10,20 @@ int main(void)
 {
 	int digit1, digit2, digit3, digit4;
 
-	for (digit1 = 0; digit1 <= 9; digit1++)
+	for (int num1 = 0; num1 <= 99; num1++)
 	{
-		for (digit2 = digit1 + 1; digit2 <= 9; digit2++)
+		for (int num2 = num1; num2 <= 99; num2++)
 		{
-			putchar(digit1 + '0');
-			putchar(digit2 + '0');
+			putchar((num1 / 10) + '0');
+			putchar((num1 % 10) + '0');
 			putchar(' ');
+			putchar((num2 / 10) + '0');
+			putchar((num2 % 10) + '0');
 
-			for (digit3 = 0; digit3 <= 9; digit3++)
+			if (num1 < 99)
 			{
-				for (digit4 = digit3 + 1; digit4 <= 9; digit4++)
-				{
-					putchar(digit1 + '0');
-					putchar(digit4 + '0');
-
-					if (digit2 < 8)
-					{
-						putchar(',');
-						putchar(' ');
-					}
-				}
+				putchar(',');
+				putchar(' ');
 			}
 		}
 	}
