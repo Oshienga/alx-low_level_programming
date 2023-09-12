@@ -1,4 +1,4 @@
-#include <unistd.h>
+#include "main.h"
 
 /**
  * main - Entry point
@@ -8,11 +8,15 @@
 
 int main(void)
 {
-	/** Print the message */
-	char message[] = "_putchar\n";
+	_putchar('_');
+	_putchar('p');
+	_putchar('u');
+	_putchar('t');
+	_putchar('c');
+	_putchar('h');
+	_putchar('a');
+	_putchar('r');
+	_putchar('\n');
 
-	write(1, message, sizeof(message) - 1);
-
-	/** Return 1 to indicate success */
 	return (0);
 }
