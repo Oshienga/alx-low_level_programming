@@ -18,7 +18,7 @@ void times_table(void)
 
 			if (j == 0)
 			{
-				_putchar('0');
+				_putchar(result + '0');
 			}
 			else
 			{
@@ -28,9 +28,12 @@ void times_table(void)
 				{
 					_putchar(' ');
 				}
+				else
+				{
+					_putchar(result / 10 + '0');
+				}
+				_putchar(result % 10 + '0');
 			}
-
-			_putchar(result + '0');
 		}
 		_putchar('\n');
 	}
