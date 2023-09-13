@@ -13,15 +13,21 @@ void print_to_98(int n)
 
 	while (i != 98)
 	{
-		_putchar(48 + (i / 10) % 10);
-		_putchar(48 + i % 10);
-		_putchar(i == 98 ? '\n' : ',');
-		_putchar(' ');
 		if (i < 98)
+			_putchar(48 + (i / 10) % 10);
+			_putchar(48 + i % 10);
+			_putchar(i == 98 ? '\n' : ',');
+			_putchar(' ');
 			i++;
 		else
+			_putchar(48 + (i / 100) % 10);
+			_putchar(48 + (i / 10) % 10);
+			_putchar(48 + i % 10);
+			_putchar(i == 98 ? '\n' : ',');
+			_putchar(' ');
 			i--;
 	}
 	_putchar('9');
 	_putchar('8');
+	_putchar('\n');
 }
