@@ -9,41 +9,17 @@
 
 void print_to_98(int n)
 {
-	int i = n;
+	int i = n, neg = n < 98 ? -1 : 1;
 
 	while (i != 98)
 	{
-		if (i < 98)
-		{
-			if (i > 9)
-			{
-				_putchar('0' + (i / 10) % 10);
-				_putchar('0' + i % 10);
-			} else if (i < 0)
-			{
-				_putchar('-');
-				_putchar('0' + (-i / 100) % 10);
-				_putchar('0' + (-i / 10) % 10);
-				_putchar('0' + (-i) % 10);
-			} else
-			{
-				_putchar('0' + i % 10);
-			}
-			_putchar(i == 98 ? '\n' : ',');
+		if (i * neg >= 10 || i == 0)
+			_putchar('0' + i * neg / 10);
+		_putchar('0' + i * neg % 10);
+		_putchar(i == 98 ? '\n' : ',');
+		if (i * neg < 98)
 			_putchar(' ');
-			i++;
-		} else
-		{
-			if (i > 99)
-			{
-				_putchar('0' + (i / 100) % 10);
-			}
-			_putchar('0' + (i / 10) % 10);
-			_putchar('0' + i % 10);
-			_putchar(i == 98 ? '\n' : ',');
-			_putchar(' ');
-			i--;
-		}
+		i += neg;
 	}
 	_putchar('9');
 	_putchar('8');
