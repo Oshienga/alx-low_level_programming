@@ -15,7 +15,10 @@ void print_to_98(int n)
 	{
 		if (i < 98)
 		{
-			_putchar(48 + (i / 10) % 10);
+			if (i > 9)
+			{
+				_putchar(48 + (i / 10) % 10);
+			}
 			_putchar(48 + i % 10);
 			_putchar(i == 98 ? '\n' : ',');
 			_putchar(' ');
@@ -23,7 +26,10 @@ void print_to_98(int n)
 		}
 		else
 		{
-			_putchar(48 + (i / 100) % 10);
+			if (i > 99)
+			{
+				_putchar(48 + (i / 100) % 10);
+			}
 			_putchar(48 + (i / 10) % 10);
 			_putchar(48 + i % 10);
 			_putchar(i == 98 ? '\n' : ',');
