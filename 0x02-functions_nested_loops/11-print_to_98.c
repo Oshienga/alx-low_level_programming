@@ -21,7 +21,7 @@ void print_to_98(int n)
 			}
 			if (i < 0)
 			{
-				putchar('-');
+				_putchar('-');
 				i = -i;
 			}
 			_putchar(48 + i % 10);
