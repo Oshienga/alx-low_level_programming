@@ -10,6 +10,7 @@
 void print_to_98(int n)
 {
 	int i = n;
+	int j;
 
 	while (i != 98)
 	{
@@ -22,8 +23,8 @@ void print_to_98(int n)
 			if (i < -99)
 			{
 				_putchar('-');
-				i = -i;
-				_putchar(48 + (i / 100) % 10);
+				j = -i;
+				_putchar(48 + (j / 100) % 10);
 			}
 			_putchar(48 + i % 10);
 			_putchar(i == 98 ? '\n' : ',');
