@@ -19,6 +19,11 @@ void print_to_98(int n)
 			{
 				_putchar(48 + (i / 10) % 10);
 			}
+			if (i < 0)
+			{
+				putchar('-');
+				i = -i;
+			}
 			_putchar(48 + i % 10);
 			_putchar(i == 98 ? '\n' : ',');
 			_putchar(' ');
