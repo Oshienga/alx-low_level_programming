@@ -22,9 +22,9 @@ void print_to_98(int n)
 			} else if (i < 0)
 			{
 				_putchar('-');
-				_putchar(i < -99 ? '0' + (-i / 100) % 10 : '');
-				_putchar(i < -99 ? '0' + (-i / 10) % 10 : '');
-				_putchar(i < -9 ? '0' + (-i / 10) % 10 : '');
+				_putchar(i < -99 ? '0' + (-i / 100) % 10 : ' ');
+				_putchar(i < -99 ? '0' + (-i / 10) % 10 : ' ');
+				_putchar(i < -9 ? '0' + (-i / 10) % 10 : ' ');
 				_putchar('0' + (-i) % 10);
 			} else
 			{
