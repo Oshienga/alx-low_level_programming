@@ -9,12 +9,12 @@
 
 int main(void)
 {
-	int64_t i = 1;
-	int64_t j = 2;
-	int64_t k = 0;
+	uint64_t i = 1;
+	uint64_t j = 2;
+	uint64_t k = 0;
 	int count = 0;
 
-	printf("%" PRId64 ", %" PRId64 ", ", i, j);
+	printf("%" PRIu64 ", %" PRIu64, i, j);
 
 	while (count < 96)
 	{
@@ -25,10 +25,10 @@ int main(void)
 		if (count == 95)
 		{
 			printf("%ld", k);
-			printf("%" PRId64, k);
+			printf("%" PRIu64, k);
 		} else
 		{
-			printf(", %" PRId64, k);
+			printf(", %" PRIu64, k);
 		}
 
 		count++;
