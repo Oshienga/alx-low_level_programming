@@ -13,12 +13,22 @@ int main(void)
 	int k = 0;
 	int count = 0;
 
+	printf("%d, %d, ", i, j);
+
 	while (count < 50)
 	{
 		k = i + j;
-		printf("%d, %d, %d, ", i, j, k);
 		i = j;
 		j = k;
+
+		if (count == 49)
+		{
+			printf("%d", k);
+		} else
+		{
+			printf("%d, ", k);
+		}
+
 		count++;
 	}
 
