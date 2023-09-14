@@ -8,12 +8,12 @@
 
 int main(void)
 {
-	unsigned long i = 1;
-	unsigned long j = 2;
-	unsigned long k = 0;
+	unsigned int i = 1;
+	unsigned int j = 2;
+	unsigned int k = 0;
 	int count = 0;
 
-	printf("%lu, %lu, ", i, j);
+	printf("%u, %u, ", i, j);
 
 	while (count < 96)
 	{
@@ -23,10 +23,10 @@ int main(void)
 
 		if (count == 95)
 		{
-			printf("%lu", k);
+			printf("%u", k);
 		} else
 		{
-			printf("%lu, ", k);
+			printf("%u, ", k);
 		}
 
 		count++;
