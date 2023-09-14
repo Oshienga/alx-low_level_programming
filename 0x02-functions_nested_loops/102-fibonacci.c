@@ -8,31 +8,24 @@
 
 int main(void)
 {
-	int i = 1;
-	int j = 2;
-	int k = 0;
-	int count = 0;
+	int fib[50];
 
-	printf("%d, %d, ", i, j);
+	fib[0] = 1;
+	fib[1] = 2;
 
-	while (count < 48)
+	/** Calculate and store the first 50 Fibonacci numbers */
+	for (int i = 2; i < 50; i++)
 	{
-		k = i + j;
-		i = j;
-		j = k;
-
-		if (count == 47)
-		{
-			printf("%d", k);
-		} else
-		{
-			printf("%d, ", k);
-		}
-
-		count++;
+		fib[i] = fib[i - 1] + fib[i - 2];
 	}
 
-	printf("\n");
+	/** Print the first 50 Fibonacci numbers separated by comma and space */
+	for (int i = 0; i < 49; i++)
+	{
+		printf("%d, ", fib[i]);
+	}
+
+	printf("%d\n", fib[49]);
 
 	/** Return 0 to indicate success */
 	return (0);
