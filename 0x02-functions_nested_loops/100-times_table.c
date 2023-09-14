@@ -26,8 +26,8 @@ void print_times_table(int n)
 				{
 					_putchar(',');
 					_putchar(' ');
-					_putchar(i > 99 ? '0' + (result / 100) % 10 : ' ');
-					_putchar(i > 9 ? '0' + (result / 10) % 10 : ' ');
+					_putchar(result > 99 ? '0' + (result / 100) % 10 : ' ');
+					_putchar(result > 9 ? '0' + (result / 10) % 10 : ' ');
 					_putchar('0' + result % 10);
 				}
 			}
