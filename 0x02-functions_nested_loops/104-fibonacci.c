@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <inttypes.h>
 
 /**
  * main - Entry point
@@ -9,12 +8,12 @@
 
 int main(void)
 {
-	uint64_t i = 1;
-	uint64_t j = 2;
-	uint64_t k = 0;
+	unsigned long i = 1;
+	unsigned long j = 2;
+	unsigned long k = 0;
 	int count = 0;
 
-	printf("%" PRIu64 ", %" PRIu64, i, j);
+	printf("%lu, %lu, ", i, j);
 
 	while (count < 96)
 	{
@@ -24,11 +23,10 @@ int main(void)
 
 		if (count == 95)
 		{
-			printf("%ld", k);
-			printf("%" PRIu64, k);
+			printf("%lu", k);
 		} else
 		{
-			printf(", %" PRIu64, k);
+			printf("%lu, ", k);
 		}
 
 		count++;
