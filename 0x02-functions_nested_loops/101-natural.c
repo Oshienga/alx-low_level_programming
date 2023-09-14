@@ -19,7 +19,7 @@ int main(void)
 		}
 	}
 
-	printf("%d", result)
+	printf("%d", result);
 	printf("\n");
 
 	/** Return 0 to indicate success */
