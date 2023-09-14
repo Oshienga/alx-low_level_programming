@@ -8,12 +8,12 @@
 
 int main(void)
 {
-	long long i = 1;
-	long long j = 2;
-	long long k = 0;
+	long i = 1;
+	long j = 2;
+	long k = 0;
 	int count = 0;
 
-	printf("%d, %d, ", i, j);
+	printf("%ld, %ld, ", i, j);
 
 	while (count < 48)
 	{
@@ -23,10 +23,10 @@ int main(void)
 
 		if (count == 47)
 		{
-			printf("%lld", k);
+			printf("%ld", k);
 		} else
 		{
-			printf("%lld, ", k);
+			printf("%ld, ", k);
 		}
 
 		count++;
