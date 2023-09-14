@@ -15,12 +15,13 @@ int main(void)
 
 	while (k <= 4000000)
 	{
+		/** Fibonacci sequence */
+		k = i + j;
+		i = j;
+		j = k;
+
 		if (k % 2 == 0)
 		{
-			/** Fibonacci sequence */
-			k = i + j;
-			i = j;
-			j = k;
 			result += k;
 		}
 	}
