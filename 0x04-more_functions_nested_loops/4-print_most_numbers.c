@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * print_numbers - Entry point
+ * print_most_numbers - Entry point
  * Description: 'This program prints a message to the standard output.'
  * Return: Always 1 (Success)
 */
 
-void print_numbers(void)
+void print_most_numbers(void)
 {
 	char digit = '0';
 
