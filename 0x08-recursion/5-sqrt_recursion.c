@@ -9,30 +9,36 @@
 
 int _sqrt_recursion(int n)
 {
-	if (n <= 0)
+	if (n < 0)
 	{
 		return (-1);
 	}
+	if (n == 0 || n == 1)
+	{
+		return (n);
+	}
 
-	return (check_sqrt(1));
+	return (sqrt_helper(n, 1));
 }
 
 /**
- * check_sqrt - subfunction point
+ * sqrt_helper - subfunction point
  * Description: 'This program prints a message to the standard output.'
- * @current: subfunction argument
+ * @n: subfunction argument
+ * @guess: subfunction argument
  * Return: result
 */
 
-int check_sqrt(int current)
+int sqrt_helper(int n, int guess)
 {
-	if (current * current >= n)
+	if (guess * guess == n)
 	{
-		if (current * current == n)
-		{
-			return (current);
-		}
+		return (guess);
+	}
+	if (guess * guess > n)
+	{
 		return (-1);
 	}
-	return (check_sqrt(current + 1));
+
+	return (sqrt_helper(n, guess + 1));
 }
