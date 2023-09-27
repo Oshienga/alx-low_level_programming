@@ -1,23 +1,24 @@
 #include "main.h"
 
 /**
- * str_length - subfunction point
+ * is_palindrome_helper - subfunction point
  * Description: 'This program prints a message to the standard output.'
- * @s: subfunction argument
+ * @left: subfunction argument
+ * @right: subfunction argument
  * Return: result
 */
 
-int str_length(char *s)
+bool is_palindrome_helper(char *left, char *right)
 {
-	int length;
-
-	length = 0;
-
-	while (s[length] != '\0')
+	if (left >= right)
 	{
-		length++;
+		return (true);
 	}
-	return (length);
+	if (*left != *right)
+	{
+		return (false);
+	}
+	return (is_palindrome_helper(left + 1, right - 1));
 }
 
 /**
@@ -29,22 +30,11 @@ int str_length(char *s)
 
 int is_palindrome(char *s)
 {
-	int length;
-	int i;
+	int length = strlen(s);
 
-	length = str_length(s);
-
-	if (length == 0)
+	if (length <= 1)
 	{
-		return (1);
+		return (true);
 	}
-
-	for (i = 0; i < length / 2; i++)
-	{
-		if (s[i] != s[length - 1 - i])
-		{
-			return (0);
-		}
-	}
-	return (1);
+	return (is_palindrome_helper(s, s + length - 1));
 }
