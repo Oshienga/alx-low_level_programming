@@ -11,10 +11,8 @@
 
 int main(int argc, char **argv)
 {
-	int sum, num, i, j;
-	char *arg
-
-	sum = 0;
+	int sum = 0;
+	int i, j, num;
 
 	if (argc == 1)
 	{
@@ -22,9 +20,10 @@ int main(int argc, char **argv)
 		return (0);
 	}
 
-	for (i = 1; i < argc; i++)
+	for (int i = 1; i < argc; i++)
 	{
-		*arg = argv[i];
+		char *arg = argv[i];
+
 		num = 0;
 		j = 0;
 
@@ -34,7 +33,8 @@ int main(int argc, char **argv)
 			{
 				num = num * 10 + (arg[j] - '0');
 				j++;
-			} else
+			}
+			else
 			{
 				printf("Error\n");
 				return (1);
