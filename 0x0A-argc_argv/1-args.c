@@ -1,28 +1,4 @@
-#include "main.h"
-#include <stddef.h>
-
-/**
- * print_number - Entry point
- * Description: 'This program prints a message to the standard output.'
- * @n: argument
- * Return: Always 0 (Success)
-*/
-
-void print_number(int n)
-{
-	if (n < 0)
-	{
-		_putchar('-');
-		n = -n;
-	}
-
-	if (n / 10 != 0)
-	{
-		print_number(n / 10);
-	}
-
-	_putchar((n % 10) + '0');
-}
+#include <stdio.h>
 
 /**
  * main - Entry point
@@ -34,15 +10,15 @@ void print_number(int n)
 
 int main(int argc, char *argv[])
 {
-	int count = 0;
+	(void)argv;
 
-	while (argv[count] != NULL)
+	if (argc == 1)
 	{
-		count++;
+		printf("0\n");
 	}
-
-	count--;
-	print_number(count);
-	_putchar('\n');
+	else
+	{
+		printf("%d\n", argc - 1);
+	}
 	return (0);
 }
