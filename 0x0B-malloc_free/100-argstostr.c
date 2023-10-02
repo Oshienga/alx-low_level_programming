@@ -11,12 +11,13 @@
 
 char *argstostr(int ac, char **av)
 {
+	int i, index, total_length;
+	char *result;
+
 	if (ac == 0 || av == NULL)
 	{
 		return (NULL);
 	}
-	int i, index, total_length;
-	char *result;
 
 	total_length = 0;
 
