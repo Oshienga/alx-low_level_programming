@@ -9,9 +9,12 @@
  * Return: Always 0 (Success)
 */
 
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
-	int i, num, sum;
+	int sum, num, i, j;
+	char *arg
+
+	sum = 0;
 
 	if (argc == 1)
 	{
@@ -19,22 +22,28 @@ int main(int argc, char *argv[])
 		return (0);
 	}
 
-	sum = 0;
-
 	for (i = 1; i < argc; i++)
 	{
-		num = atoi(argv[i]);
+		*arg = argv[i];
+		num = 0;
+		j = 0;
 
-		if (num <= 0 || argv[i][0] == '-')
+		while (arg[j] != '\0')
 		{
-			printf("Error\n");
-			return (1);
+			if (arg[j] >= '0' && arg[j] <= '9')
+			{
+				num = num * 10 + (arg[j] - '0');
+				j++;
+			} else
+			{
+				printf("Error\n");
+				return (1);
+			}
 		}
 
 		sum += num;
 	}
 
 	printf("%d\n", sum);
-
 	return (0);
 }
