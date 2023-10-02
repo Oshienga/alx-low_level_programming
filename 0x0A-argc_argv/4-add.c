@@ -11,17 +11,19 @@
 
 int main(int argc, char *argv[])
 {
+	int i, num, sum;
+
 	if (argc == 1)
 	{
 		printf("0\n");
 		return (0);
 	}
 
-	int sum = 0;
+	sum = 0;
 
-	for (int i = 1; i < argc; i++)
+	for (i = 1; i < argc; i++)
 	{
-		int num = atoi(argv[i]);
+		num = atoi(argv[i]);
 
 		if (num <= 0 || argv[i][0] == '-')
 		{
