@@ -15,9 +15,10 @@ char *argstostr(int ac, char **av)
 	{
 		return (NULL);
 	}
-	int i;
+	int i, index, total_length;
+	char *result;
 
-	int total_length = 0;
+	total_length = 0;
 
 	for (i = 0; i < ac; i++)
 	{
@@ -30,11 +31,11 @@ char *argstostr(int ac, char **av)
 		}
 		total_length++;
 	}
-	char *result = (char *)malloc(total_length + 1);
+	result = (char *)malloc(total_length + 1);
 
 	if (result == NULL)
 		return (NULL);
-	int index = 0;
+	index = 0;
 
 	for (i = 0; i < ac; i++)
 	{
