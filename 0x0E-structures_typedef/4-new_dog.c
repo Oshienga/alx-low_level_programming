@@ -8,33 +8,35 @@
  * @name: dog's name
  * @age: dog's age
  * @owner: dog's owner
- *
  * Return: pointer
  */
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *new_dog;
-	char *name_copy, *owner_copy;
-
-	new_dog = malloc(sizeof(dog_t));
-	if (new_dog == NULL)
+	if (name == NULL || owner == NULL)
 		return (NULL);
 
-	name_copy = strdup(name);
-	owner_copy = strdup(owner);
+	dog_t *new_doggo = malloc(sizeof(dog_t));
 
-	if (name_copy == NULL || owner_copy == NULL)
+	if (new_doggo == NULL)
+		return (NULL);
+
+	new_doggo->name = strdup(name);
+	if (new_doggo->name == NULL)
 	{
-		free(name_copy);
-		free(owner_copy);
-		free(new_dog);
+		free(new_doggo);
 		return (NULL);
 	}
 
-	new_dog->name = name_copy;
-	new_dog->age = age;
-	new_dog->owner = owner_copy;
+	new_doggo->age = age;
 
-	return (new_dog);
+	new_doggo->owner = strdup(owner);
+	if (new_doggo->owner == NULL)
+	{
+		free(new_doggo->name);
+		free(new_doggo);
+		return (NULL);
+	}
+
+	return (new_doggo);
 }
