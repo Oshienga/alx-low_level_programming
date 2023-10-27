@@ -11,7 +11,8 @@ int clear_bit(unsigned long int *n, unsigned int index)
 {
 	int num_bits = 64;
 
-	if (index >= num_bits) {
+	if (index >= num_bits)
+	{
 		return (-1);
 	}
 
