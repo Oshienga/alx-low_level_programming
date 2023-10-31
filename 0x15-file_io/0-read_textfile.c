@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdlib.h>
-#include <unistd.h>
 
 /**
  * read_textfile - Entry point
