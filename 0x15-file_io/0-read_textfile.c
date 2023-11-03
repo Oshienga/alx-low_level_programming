@@ -1,7 +1,5 @@
 #include "main.h"
 #include <stdlib.h>
-#include <unistd.h>
-#include <fcntl.h>
 
 /**
  * read_textfile - Entry point
@@ -12,39 +10,32 @@
 */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int fd;
-	ssize_t bytesRead;
-	ssize_t bytesWritten;
+	ssize_t o, r, w;
+	char *buffer;
 
 	if (filename == NULL)
 	{
 		return (0);
 	}
 
-	fd = open(filename, O_RDONLY);
-	if (fd == -1)
+	buffer = malloc(sizeof(char) * letters);
+	if (buffer == NULL)
 	{
 		return (0);
 	}
 
-	char buffer[letters];
+	o = open(filename, O_RDONLY);
+	r = read(o, buffer, letters);
+	w = write(STDOUT_FILENO, buffer, r);
 
-	bytesRead = read(fd, buffer, letters);
-
-	if (bytesRead <= 0)
+	if (o == -1 || r == -1 || w == -1 || w != r)
 	{
-		close(fd);
+		free(buffer);
 		return (0);
 	}
 
-	bytesWritten = write(STDOUT_FILENO, buffer, bytesRead);
+	free(buffer);
+	close(o);
 
-	if (bytesWritten != bytesRead)
-	{
-		close(fd);
-		return (0);
-	}
-
-	close(fd);
-	return (bytesWritten);
+	return (w);
 }
